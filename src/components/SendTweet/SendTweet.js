@@ -4,20 +4,46 @@ import AddIcon from "@mui/icons-material/Add";
 import moment from "moment";
 import "./SendTweet.scss";
 import ModalContainer from "../Modal/ModalContainer";
+import FormSendTweet from "../FormSendTweet/FormSendTweet";
+import { TWEETS_STORAGE } from "../../utils/constant";
+const SendTweet = (props) => {
+  const [isOpenModal, SetIsOpenModal] = useState(false);
+  const { SetToastProps, allTweets } = props;
+  // const [tweet, SetTweet] = useState([]);
 
+  const openModal = () => {
+    SetIsOpenModal(true);
+  };
 
-const SendTweet = () => {
+  const closeModal = () => {
+    SetIsOpenModal(false);
+  };
 
-    const [isOpenModal, SetIsOpenModal] = useState(false);
+  const sendTweet = (event, formValue) => {
+    event.preventDefault();
+    const { name, tweet } = formValue;
+    let allTweetsArray = [];
 
-    const openModal = () => {
-      SetIsOpenModal(true);
-    };
-    
-    const closeModal = () => {
-        SetIsOpenModal(false);
-      };
-    
+    if(allTweets){
+      allTweetsArray = allTweets;
+    }
+
+    if (!name || !tweet) {
+      SetToastProps({ open: true, text: "Ambos campos son obligatorios", result: false });
+    } else {
+      formValue.time = moment();
+      allTweetsArray.push(formValue);
+      localStorage.setItem(TWEETS_STORAGE, JSON.stringify(allTweetsArray));
+      SetToastProps({ open: true, text: "tweet enviado correctamente", result:true });
+      closeModal();
+    }
+    setTimeout(() => {
+      SetToastProps({ open: false });
+    }, 2000);
+
+    allTweetsArray = [];
+
+  };
 
   return (
     <div className="send-tweet">
@@ -29,7 +55,9 @@ const SendTweet = () => {
       >
         <AddIcon />
       </Fab>
-      <ModalContainer isOpenModal={isOpenModal} closeModal ={closeModal} />
+      <ModalContainer isOpenModal={isOpenModal} closeModal={closeModal}>
+        <FormSendTweet sendTweet={sendTweet} />
+      </ModalContainer>
     </div>
   );
 };

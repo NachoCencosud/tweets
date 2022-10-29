@@ -1,0 +1,27 @@
+.header-container {
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(21,32,43);
+  z-index: 1;
+
+  .logo-header {
+    width: 100px;
+    height: 100px;
+  }
+
+  .text-header {
+    font-size: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    color: white;
+  }
+
+}
+
+

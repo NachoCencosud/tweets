@@ -1,6 +1,7 @@
 import "./ListTweets.scss";
 import { Grid } from "@mui/material";
 import Tweet from "../Tweet/Tweet";
+import { useEffect } from "react";
 
 const ListTweets = (props) => {
   const { allTweets, deleteTweet } = props;

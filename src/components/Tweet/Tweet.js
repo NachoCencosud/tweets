@@ -6,8 +6,10 @@ import "./Tweet.scss";
 
 const Tweet = (props) => {
   const {
-    tweet: { name, tweet, time },index,deleteTweet} = props;
-
+    tweet: { name, tweet, time },
+    index,
+    deleteTweet,
+  } = props;
 
   return (
     <Card className="tweet">

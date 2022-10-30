@@ -7,6 +7,7 @@ import { Snackbar, Alert } from "@mui/material";
 import { useState, useEffect } from "react";
 import { TWEETS_STORAGE } from "../src/utils/constant";
 import ListTweets from "./components/ListTweets/ListTweets";
+import Swal from "sweetalert2";
 
 function App() {
   const [toastProps, SetToastProps] = useState({
@@ -29,6 +30,13 @@ function App() {
     SetAllTweets(allTweets);
     localStorage.setItem(TWEETS_STORAGE, JSON.stringify(allTweets));
     setReloadTweets(true);
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'El tweet se ha eliminado correctamente',
+      showConfirmButton: false,
+      timer: 1500
+    })
   };
 
   const handleClose = () => {

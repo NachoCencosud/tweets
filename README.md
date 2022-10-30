@@ -13,7 +13,7 @@
     Mini simulador de Twitter realizado con React
     <br />
     <br />
-    <a href="https://stellular-tarsier-e8bf91.netlify.app/">Ver demo</a>
+    <a href="https://tweets-for-you-life.netlify.app/">Ver demo</a>
     ·
     <a href="https://github.com/NachoCencosud/tweets/issues">Reportar errores</a>
     

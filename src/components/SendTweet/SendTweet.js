@@ -24,25 +24,33 @@ const SendTweet = (props) => {
     const { name, tweet } = formValue;
     let allTweetsArray = [];
 
-    if(allTweets){
+    if (allTweets) {
       allTweetsArray = allTweets;
     }
 
     if (!name || !tweet) {
-      SetToastProps({ open: true, text: "Ambos campos son obligatorios", result: false });
+      SetToastProps({
+        open: true,
+        text: "Ambos campos son obligatorios",
+        result: false,
+      });
     } else {
       formValue.time = moment();
       allTweetsArray.push(formValue);
       localStorage.setItem(TWEETS_STORAGE, JSON.stringify(allTweetsArray));
-      SetToastProps({ open: true, text: "tweet enviado correctamente", result:true });
+      SetToastProps({
+        open: true,
+        text: "tweet enviado correctamente",
+        result: true,
+      });
       closeModal();
+     
     }
     setTimeout(() => {
       SetToastProps({ open: false });
     }, 2000);
 
     allTweetsArray = [];
-
   };
 
   return (

@@ -10,7 +10,6 @@ import ListTweets from "./components/ListTweets/ListTweets";
 import Swal from "sweetalert2";
 
 function App() {
-  
   const [toastProps, SetToastProps] = useState({
     open: false,
     text: null,
@@ -19,11 +18,13 @@ function App() {
   const [allTweets, SetAllTweets] = useState([]);
   const [reloadTweets, setReloadTweets] = useState(false);
 
+
   useEffect(() => {
     const allTw = localStorage.getItem(TWEETS_STORAGE);
     const allTwArray = JSON.parse(allTw);
     SetAllTweets(allTwArray);
     setReloadTweets(false);
+
   }, [reloadTweets]);
 
   const deleteTweet = (index) => {
@@ -32,12 +33,12 @@ function App() {
     localStorage.setItem(TWEETS_STORAGE, JSON.stringify(allTweets));
     setReloadTweets(true);
     Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'El tweet se ha eliminado correctamente',
+      position: "center",
+      icon: "success",
+      title: "El tweet se ha eliminado correctamente",
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
   };
 
   const handleClose = () => {

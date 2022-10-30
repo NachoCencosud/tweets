@@ -18,6 +18,9 @@ function App() {
   const [allTweets, SetAllTweets] = useState([]);
   const [reloadTweets, setReloadTweets] = useState(false);
 
+  useEffect(() => {
+    localStorage.setItem(TWEETS_STORAGE, JSON.stringify([]))
+  }, [])
 
   useEffect(() => {
     const allTw = localStorage.getItem(TWEETS_STORAGE);

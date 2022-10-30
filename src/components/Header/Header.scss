@@ -1,5 +1,4 @@
 .header-container {
-  border: 1px solid white;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -9,6 +8,9 @@
   align-items: center;
   background-color: rgb(21,32,43);
   z-index: 1;
+  border: none;
+  border-radius: 50%;
+  background: white;
 
   .logo-header {
     width: 100px;
@@ -19,7 +21,7 @@
     font-size: 20px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-style: oblique;
-    color: white;
+    color: #2aa8df;
   }
 
 }

@@ -6,12 +6,14 @@ import "./Tweet.scss";
 
 const Tweet = (props) => {
   const {
-    tweet: { name, tweet, time },index,deleteTweet} = props;
-
+    tweet: { name, tweet, time },
+    index,
+    deleteTweet,
+  } = props;
 
   return (
     <Card className="tweet">
-      <CardContent>
+      <CardContent className="card-content">
         <div className="tweet__header">
           <h5>{name}</h5>
           <DeleteTwoTone onClick={() => deleteTweet(index)} />

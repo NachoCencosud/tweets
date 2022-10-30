@@ -24,7 +24,7 @@
 
 ## Acerca del proyecto
 
-![Product Name Screen Shot](<./src/assets/img/Captura%20de%20Pantalla%202022-10-22%20a%20la(s)%2013.32.08.png>)
+![Product Name Screen Shot](<./src/assets/images/Screen.jpg>)
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 

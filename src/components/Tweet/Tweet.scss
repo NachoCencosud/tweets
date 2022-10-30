@@ -1,27 +1,32 @@
 .tweet {
-    position: relative;
-  
-    &__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  
-      h5 {
-        margin: 0;
-      }
-  
-      svg {
-        &:hover {
-          cursor: pointer;
-          fill: #f00;
-        }
-      }
+  position: relative;
+  transition: all 0.8s ease;
+ 
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h5 {
+      margin: 0;
     }
-  
-    &__date-add-tweet {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      font-size: 10px;
+
+    svg {
+      &:hover {
+        cursor: pointer;
+        fill: #f00;
+      }
     }
   }
+
+  &__date-add-tweet {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 10px;
+  }
+}
+.tweet:hover {
+  position: relative;
+  transform: scale(1.02);
+}
